@@ -42,7 +42,11 @@ const collegeDetailsSchema = new mongoose.Schema({
     address: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'CollegeAddress'
-    }
+    },
+    stream: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Stream'
+    }]
 }, {timestamps: true});
 
 const College = mongoose.model('College', collegeDetailsSchema);

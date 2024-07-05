@@ -5,7 +5,7 @@ import { handleError } from "../utils/validation.utils.js";
 const createCollegeAddress = async (req, res) => {
     try {
         const {collegeId} = req.params
-        const {street, city, area, ward, Zone, region, pinCode} = req.body;
+        const {street, city, area, ward, Zone, region, pinCode, nearestBusStop, nearestLandmark, nearestRailwayStation} = req.body;
         
         const college = await College.findById(collegeId);
         if(!college){
@@ -20,6 +20,9 @@ const createCollegeAddress = async (req, res) => {
             Zone,
             region,
             pinCode,
+            nearestBusStop,
+            nearestLandmark,
+            nearestRailwayStation,
             college: collegeId
         });
 
